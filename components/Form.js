@@ -47,6 +47,7 @@ export default function Form({ onSubmit, formName, defaultData }) {
         name="image"
         type="text"
         defaultValue={defaultData?.image}
+        required
       />
       <Label htmlFor="location">Location</Label>
       <Input
