@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Card from "../components/Card.js";
-import useSWR from "swr";
 import Link from "next/link.js";
+import styled from "styled-components";
+import useSWR from "swr";
+import Card from "../components/Card.js";
 import { StyledLink } from "../components/StyledLink.js";
 
 const List = styled.ul`
@@ -30,12 +30,12 @@ export default function Home() {
       <List role="list">
         {data.map((place) => {
           return (
-            <ListItem key={place.id}>
+            <ListItem key={place._id}>
               <Card
                 name={place.name}
                 image={place.image}
                 location={place.location}
-                id={place.id}
+                id={place._id}
               />
             </ListItem>
           );
