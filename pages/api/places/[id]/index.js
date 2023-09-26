@@ -16,4 +16,10 @@ export default async function handler(request, response) {
   }
 
   response.status(200).json(place);
+
+  if (request.method === "PUT") {
+    const newPlaceData = request.body;
+    await Place.findByIdAndUpdate(id, newPlaceData);
+    response.status(200).json({ status: "Entry updated." });
+  }
 }
